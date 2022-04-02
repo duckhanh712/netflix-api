@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "tranning webshop",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "dev": "nodemon --exec ts-node ./src/server.ts",
+    "dev": "nodemon --exec ts-node ./src/app.ts",
+    "migrate": "npx knex migrate:latest --knexfile db/knexfile.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,11 +20,17 @@
   "homepage": "https://github.com/duckhanh712/tranningEcommerce#readme",
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
   },
   "dependencies": {
+    "@types/knex": "^0.16.1",
     "body-parser": "^1.19.2",
     "express": "^4.17.3",
-    "nodemon": "^2.0.15"
+    "knex": "^1.0.4",
+    "knex-paginator": "^2.0.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15",
+    "parse-database-url": "^0.3.0"
   }
 }
