@@ -26,11 +26,13 @@
   "dependencies": {
     "@types/knex": "^0.16.1",
     "body-parser": "^1.19.2",
+    "camelcase-keys": "^7.0.2",
     "express": "^4.17.3",
     "knex": "^1.0.4",
     "knex-paginator": "^2.0.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.15",
-    "parse-database-url": "^0.3.0"
+    "parse-database-url": "^0.3.0",
+    "snakecase-keys": "^5.4.0"
   }
 }

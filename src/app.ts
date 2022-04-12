@@ -19,8 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // routes
-import router from './routes/products';
-app.use(router)
+import userRouter from './routes/users';
+app.use('/api/v1',userRouter)
 // middleware routers
 // import db from './db/database';
 // app.use(db);
