@@ -13,11 +13,11 @@ const knexConfig = {
     pool: {
       min: 2,
       max: 10
-    }
-    // migrations: {
-    //   directory: 'migrations'
-    // },
-    // useNullAsDefault: true
+    },
+    migrations: {
+      directory: 'migrations',
+    },
+    useNullAsDefault: true
   },
 
   // production: {

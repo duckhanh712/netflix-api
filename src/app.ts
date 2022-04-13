@@ -21,9 +21,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // routes
 import userRouter from './routes/users';
 app.use('/api/v1',userRouter)
-// middleware routers
-// import db from './db/database';
-// app.use(db);
 
 server.listen(port, () => {
     console.log('Server listening at port %d', port);
