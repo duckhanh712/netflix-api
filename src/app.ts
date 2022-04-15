@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 import userRouter from './routes/users';
 app.use('/api/v1',userRouter)
 
+
 server.listen(port, () => {
     console.log('Server listening at port %d', port);
 });

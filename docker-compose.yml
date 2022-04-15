@@ -7,9 +7,8 @@ services:
     restart: always
     environment:
       - MYSQL_DATABASE=netflix
-      - MYSQL_ROOT_PASSWORD=mauFJcuf5dhRMQrjj
     ports:
-      - '3306:3306'
+      - '33068:3306'
     volumes:
       - db:/var/lib/mysql
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
