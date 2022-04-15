@@ -2,6 +2,8 @@ import express from 'express';
 import http from 'http';
 import bodyParser from 'body-parser';
 
+// console.log(DB_HOST,DB_NAME);
+
 
 // configs
 const port = process.env.PORT || 3003
@@ -23,6 +25,7 @@ import userRouter from './routes/users';
 app.use('/api/v1',userRouter)
 
 
+
 server.listen(port, () => {
     console.log('Server listening at port %d', port);
 });
@@ -32,3 +35,8 @@ process.on('uncaughtException', err => {
     console.error('There was an uncaught error', err);
     // process.exit(1) //mandatory (as per the Node.js docs)
 }) 
+export const DB_HOST = process.env.DB_HOST
+export const DB_PORT = process.env.DB_PORT 
+export const DB_USER = process.env.DB_USER 
+export const DB_PASSWORD = process.env.DB_PASSWORD
+export const DB_NAME = process.env.DB_NAME 

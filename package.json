@@ -4,7 +4,7 @@
   "description": "tranning webshop",
   "main": "index.js",
   "scripts": {
-    "start": "env $(grep -v '^#' .env) nodemon --exec ts-node ./src/app.ts",
+    "start": "docker-compose -f docker-compose.yml up -d && env $(grep -v '^#' .env) nodemon --exec ts-node ./src/app.ts",
     "dcc": "docker-compose -f docker-compose.yml up -d",
     "generate": "npx knex migrate:make --knexfile src/db/knexfile.ts -x ts",
     "migrate": "npx knex migrate:latest --knexfile src/db/knexfile.ts",

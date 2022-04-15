@@ -1,15 +1,25 @@
+// import {
+//   DB_HOST,
+//   DB_PORT,
+//   DB_USER,
+//   DB_PASSWORD,
+//   DB_NAME
+// } from '../constanst/env'
 // Update with your config settings.
+const connection= {
+  host: '127.0.0.1',
+  port: 33068,
+  database: 'netflix',
+  user: 'root',
+  password: null,
+
+}
+
 const knexConfig = {
 
   development: {
     client: 'mysql',
-    connection: {
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      database: process.env.DB_NAME,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-    },
+    connection,
     pool: {
       min: 2,
       max: 10
