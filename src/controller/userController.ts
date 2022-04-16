@@ -13,8 +13,7 @@ export const createUser = async (req: Request, res: Response) => {
 }
 
 export const getUser = async (_req: Request, res: Response) => {
-  console.log(process.env.DB_HOST);
-  return res.send("ok").status(200)
+  
   const user: any[] = await UserModel.select("*").whereNot('id', 0)
   return res.send({ user })
 }
