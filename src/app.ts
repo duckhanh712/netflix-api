@@ -24,6 +24,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 import userRouter from './routes/users';
 app.use('/api/v1',userRouter)
 
+import categoryRouter from './routes/categories';
+app.use('/api/v1',categoryRouter)
+
 
 
 server.listen(port, () => {

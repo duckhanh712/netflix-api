@@ -1,10 +1,10 @@
 {
-  "name": "webshop",
+  "name": "netflix",
   "version": "1.0.0",
   "description": "tranning webshop",
   "main": "index.js",
   "scripts": {
-    "start": "docker-compose -f docker-compose.yml up -d && env $(grep -v '^#' .env) nodemon --exec ts-node ./src/app.ts",
+    "start": "nodemon --exec ts-node ./src/app.ts",
     "dcc": "docker-compose -f docker-compose.yml up -d",
     "generate": "npx knex migrate:make --knexfile src/db/knexfile.ts -x ts",
     "migrate": "npx knex migrate:latest --knexfile src/db/knexfile.ts",
@@ -28,8 +28,10 @@
   },
   "dependencies": {
     "@types/knex": "^0.16.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.2",
     "camelcase-keys": "^7.0.2",
+    "date-fns": "^2.28.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "knex": "^1.0.7",

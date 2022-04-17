@@ -3,12 +3,11 @@ import { Knex } from "knex";
 
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable('categories', table => {
-    table.increments('id');
-    table.string('first_name', 255).notNullable();
-    table.string('last_name', 255).notNullable();
-    table.string('email', 255).notNullable();
-    table.string('password', 255).notNullable();
-    table.timestamps();
+    table.increments('id').primary();
+    table.string('name', 255).notNullable();
+    table.integer('parent_id', 10).notNullable();
+    table.string('image_url', 255).notNullable().defaultTo(null);
+    table.timestamps(true, true);
   })
 }
 

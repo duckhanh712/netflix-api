@@ -33,7 +33,7 @@ export const updateCategory = async(req:Request, res:Response) => {
   const { name, parentId, imageUrl } = req.body
 
   await CategoryModel
-                      .update(snakecaseKey({ name, parentId, imageUrl }))
-                      .where('id', categoryId)
+    .update(snakecaseKey({ name, parentId, imageUrl }))
+    .where('id', categoryId)
   return res.send("oke")
 }

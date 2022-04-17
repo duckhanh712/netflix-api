@@ -6,7 +6,7 @@ const router: Router = express.Router();
 
 router.get('/categories' , getCategory)
 
-router.post('/register' , createCategory)
+router.post('/createcategory' , createCategory)
 
 router.get('/categories/:categoryId', getCategoryById)
 
