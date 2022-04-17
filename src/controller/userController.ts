@@ -1,7 +1,7 @@
 import UserModel from '../db/models/users';
 import { Request, Response } from 'express';
 import snakecaseKey from 'snakecase-keys';
-import { format } from 'date-fns';
+// import { format } from 'date-fns';
 import { hashPassword } from '../utils/util'
 
 // import camelcaseKeys from 'camelcase-keys';
@@ -26,13 +26,13 @@ export const createUser = async (req: Request, res: Response) => {
   
   const hashedPassword = await hashPassword(password)
 
-  const newBirthday = format(new Date(birthday), 'yyyy-MM-dd') || null
+  const newBirthday = new Date(birthday)
   
   if (!newBirthday) {
     return res.send('ngay sinh khong dung dinh dang')
   }
   
-  await UserModel.insert(snakecaseKey({ email, lastName, firstName, password:hashedPassword, gender, birthday, roleId, imageUrl }))
+  await UserModel.insert(snakecaseKey({ email, lastName, firstName, password:hashedPassword, gender, birthday: newBirthday, roleId, imageUrl }))
 
   return res.send("ok").status(200)
 }
